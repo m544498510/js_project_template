@@ -5,7 +5,9 @@ import './index.css';
 import {getText} from '../../core/module/selector';
 
 export class Page extends Component {
-  
+  static propTypes = {
+    text: PropTypes.string
+  };
   render() {
     return (
       <div>
