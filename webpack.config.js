@@ -67,6 +67,27 @@ let config = {
         exclude: /node_modules/
       },
       {
+        test: /\.less/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+                sourceMap: false
+              }
+            }, {
+              loader: 'less-loader',
+              options: {
+                modifyVars: {
+                  '@icon-url': '"/asset/antdIconFont/iconfont"'
+                }
+              }
+            }]
+        })
+      },
+      {
         test: /\.css/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',

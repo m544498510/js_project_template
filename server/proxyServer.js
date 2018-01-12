@@ -52,7 +52,7 @@ config.proxy = {
 config.serveStatic = [
   {
     route: '/asset',
-    dir: path.resolve(srcPath, './asset')
+    dir: path.resolve(__dirname, '../asset')
   }
 ];
 browserSync(config);
